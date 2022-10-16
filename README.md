@@ -26,3 +26,5 @@ All the host networking stuff is setup in run.sh
 Yes, the booting is very slow under qemu, it'll sleep on "Star" for some minutes, then it'll begin puking out lots of 4 digit lottery numbers until it hits the login prompt (probably after 10-13mins).
 
 If you run the container in interactive mode, ctrl-c will shutdown qemu and the container.
+
+Attaching to the container after starting in a detached mode doesn't really seem to work, it never pickups any key presses.
