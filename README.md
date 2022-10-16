@@ -1,5 +1,6 @@
 # aix-docker
 Bring your own AIX disk and run AIX 7.2 in docker on X64 using qemu-system-ppc64.
+This is just a boiler plate.
 
 
 # Whatever
@@ -10,9 +11,14 @@ The AIX instance will be reachable on your local network via tap0 interface.
 We need to help this tap0 interface a little so it can talk to the outside world.
 
 
-- Run build.sh to build the docker image,
+- Run **build.sh** to build the docker image,
 
-- Run clean.sh whenever you need to clean up your mess.
+- Run **clean.sh** whenever you need to clean up your mess.
 
-- Run run.sh whenever you want to deploy your AIX docker container.
+- Run **run.sh** whenever you want to deploy your AIX docker container.
 
+
+
+Make sure you have **/proc/sys/net/ipv4/ip_forward** set to 1.
+
+All the host networking stuff is setup in run.sh
