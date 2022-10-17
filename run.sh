@@ -16,7 +16,8 @@ ip route add $AIX_IP dev tap0
 echo 1 > /proc/sys/net/ipv4/conf/tap0/proxy_arp
 arp -Ds $AIX_IP $DOCKER_HOST_INTERFACE pub
 
-# We need this to actually be able to SSH into the AIX container
+# We need this to actually be able to SSH into the AIX container and talk outbound.
+iptables -I FORWARD 1 -i tap0 -j ACCEPT
 iptables -A FORWARD -d $AIX_IP -j ACCEPT
 ###################################################################
 # Why don't you have anything to drink?
